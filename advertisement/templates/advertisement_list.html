@@ -1,5 +1,7 @@
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +9,17 @@
 </head>
 <body>
   <ul>
-      <li>Газ</li>
-      <li>Нефть</li>
-      <li>Зерновые</li>
-      <li>Рыба</li>
+      {% for ad in advs %}
+      <div class="advertisement">
+        <ul>
+          <li>{{ad.title}}</li>
+          <li>{{ad.description}}</li>
+          <li>{{ad.created_at}}</li>
+          <li>{{ad.updated_at}}</li>
+          <li>{{ad.vies_count}}</li>
+        </ul>
+      </div>
+      {% endfor %}
   </ul>  
 </body>
 </html>

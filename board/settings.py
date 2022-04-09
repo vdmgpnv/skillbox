@@ -49,7 +49,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'board.middleware.filter_ip_middleware.PauseForEvery5request',
-    'board.middleware.filter_ip_middleware.FilterIPMiddleware'
+    'board.middleware.filter_ip_middleware.FilterIPMiddleware',
+    'board.middleware.get_info_from_user.GetInfo'
 ]
 
 ROOT_URLCONF = 'board.urls'
@@ -124,3 +125,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'board/static',
+]
