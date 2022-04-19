@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'advertisement'
+    'advertisement',
+    'user_profile'
 ]
 
 MIDDLEWARE = [
@@ -48,9 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'board.middleware.filter_ip_middleware.PauseForEvery5request',
-    'board.middleware.filter_ip_middleware.FilterIPMiddleware',
-    'board.middleware.get_info_from_user.GetInfo'
+    #'board.middleware.filter_ip_middleware.PauseForEvery5request',
+    #'board.middleware.filter_ip_middleware.FilterIPMiddleware',
+    #'board.middleware.get_info_from_user.GetInfo'
 ]
 
 ROOT_URLCONF = 'board.urls'
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
