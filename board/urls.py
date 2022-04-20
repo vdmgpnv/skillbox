@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from app_users.views import MainView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('advertisement.urls')),
-    path('profiles/', include('user_profile.urls'))
+    path('vacancies/', include('app_employment.urls')),
+    path('advertisements/', include('advertisement.urls')),
+    path('profiles/', include('user_profile.urls')),
+    path('user/', include('app_users.urls')),
+    path('', MainView.as_view(), name='main')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
